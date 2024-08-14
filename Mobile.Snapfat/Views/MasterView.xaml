@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:models="clr-namespace:Mobile.Snapfat.Models"
+             x:Class="Mobile.Snapfat.Views.MasterView">
+
+    <Grid IgnoreSafeArea="True"
+          Padding="0"
+          ColumnDefinitions="auto"
+          RowDefinitions="*,*"
+          HorizontalOptions="FillAndExpand"
+          VerticalOptions="FillAndExpand">
+
+
+        <CarouselView x:Name="MainCarouselView"
+                      IsScrollAnimated="True"
+                      IsEnabled="True"
+                      Margin="0"
+                      Grid.Row="0"
+                      Grid.RowSpan="3"
+                      Loop="True"
+                      VerticalOptions="FillAndExpand"
+                      HorizontalOptions="FillAndExpand">
+
+            <!-- ItemsLayout -->
+            <CarouselView.ItemsLayout>
+                <LinearItemsLayout Orientation="Vertical"
+                                   SnapPointsType="MandatorySingle"
+                                   SnapPointsAlignment="Center"/>
+            </CarouselView.ItemsLayout>
+
+            <!-- ItemTemplate -->
+            <CarouselView.ItemTemplate>
+                <DataTemplate x:DataType="models:Post">
+                    <Grid  VerticalOptions="FillAndExpand"
+                           HorizontalOptions="FillAndExpand"
+                           IgnoreSafeArea="True"
+                           ColumnDefinitions="*,auto"
+                           RowDefinitions="*,*,*">
+
+                        <!-- Master Background image -->
+                        <Image Grid.Column="0"
+                               Grid.Row="0"
+                               Grid.ColumnSpan="3"
+                               Grid.RowSpan="3"
+                               Source="{Binding ImageUrl}"
+                               Aspect="AspectFill">
+                            <Image.Shadow>
+                                <Shadow Brush="Black"
+                                        Opacity="0.8"
+                                        Radius="5"
+                                        Offset="0,10"/>
+                            </Image.Shadow>
+                        </Image>
+
+                        <!-- shadow to add contrast to the Logo Up Side -->
+                        <BoxView ZIndex="2"
+                                 Grid.Row="0"
+                                 VerticalOptions="StartAndExpand"
+                                 HorizontalOptions="FillAndExpand"
+                                 HeightRequest="300"
+                                 BackgroundColor="Transparent">
+                            <BoxView.Background>
+                                <LinearGradientBrush EndPoint="0,1">
+                                    <GradientStop Color="Transparent"
+                                                  Offset="1.0"/>
+                                    <GradientStop Color="Black"
+                                                  Offset="0.1"/>
+                                </LinearGradientBrush>
+                            </BoxView.Background>
+                        </BoxView>
+
+                        <!-- Title , Content Buttton and Likes -->
+                        <StackLayout  ZIndex="2"
+                                      Spacing="10"
+                                      Padding="20,0,20,0"
+                                      VerticalOptions="EndAndExpand"
+                                      HorizontalOptions="StartAndExpand"
+                                      Grid.Column="0"
+                                      Grid.ColumnSpan="3"
+                                      Grid.Row="2">
+                            <Label
+                                FontSize="22"
+                                TextColor="White"
+                                FontFamily="Bold"
+                                Text="{Binding Title}"/>
+                            <Label ZIndex="2"
+                                   FontSize="14"
+                                   TextColor="White"
+                                   FontFamily="Regular"
+                                   Text="{Binding ShortContent}"/>
+
+                            <Grid  ZIndex="2"
+                                   ColumnSpacing="0"
+                                   ColumnDefinitions="auto,auto,auto,auto,auto"
+                                   RowDefinitions="*,*"
+                                   Padding="0,40,0,40"
+                                   VerticalOptions="EndAndExpand"
+                                   HorizontalOptions="StartAndExpand"
+                                   Grid.Column="0"
+                                   Grid.ColumnSpan="3"
+                                   Grid.Row="2">
+
+                                <Button Text="Rede More"
+                                        Grid.Column="0"
+                                        Grid.Row="0"
+                                        VerticalOptions="End"
+                                        WidthRequest="150"
+                                        HeightRequest="40"
+                                        FontFamily="Bold"
+                                        CornerRadius="0"
+                                        BackgroundColor="White"
+                                        TextColor="Black"/>
+
+                                <Image Source="heart.png"
+                                       WidthRequest="40"
+                                       Grid.Column="1"
+                                       Margin="20,0,0,0"
+                                       VerticalOptions="End"
+                                       HeightRequest="40"/>
+
+                                <Button Text="120"
+                                        FontFamily="Bold"
+                                        VerticalOptions="End"
+                                        FontSize="20"
+                                        Grid.Column="2"
+                                        Padding="0"
+                                        BackgroundColor="Transparent"
+                                        TextColor="White"/>
+                            </Grid>
+                        </StackLayout>
+
+                        <!-- shadow to add contrast to the labels Bottom Side -->
+                        <BoxView Grid.Row="2"
+                                 ZIndex="1"
+                                 VerticalOptions="EndAndExpand"
+                                 HorizontalOptions="FillAndExpand"
+                                 HeightRequest="500"
+                                 BackgroundColor="Transparent">
+                            <BoxView.Background>
+                                <LinearGradientBrush EndPoint="0,1">
+                                    <GradientStop Color="Transparent"
+                                                  Offset="0.0"/>
+                                    <GradientStop Color="Black"
+                                                  Offset="1.0"/>
+                                </LinearGradientBrush>
+                            </BoxView.Background>
+                        </BoxView>
+                    </Grid>
+                </DataTemplate>
+            </CarouselView.ItemTemplate>
+
+        </CarouselView>
+
+
+        <!-- Logo Section -->
+        <StackLayout Margin="{OnPlatform iOS='20,50', Android='20,20'}"
+                     Grid.Row="0"
+                     Orientation="Horizontal"
+                     Spacing="10"
+                     VerticalOptions="StartAndExpand"
+                     HorizontalOptions="StartAndExpand">
+            <Image WidthRequest="40"
+                   HeightRequest="40"
+                   VerticalOptions="CenterAndExpand"
+                   Source="logo2.png"/>
+            <Label Text="Snapfat"
+                   FontSize="26"
+                   FontFamily="Mate"
+                   TextColor="White"
+                   VerticalOptions="CenterAndExpand"/>
+        </StackLayout>
+    </Grid>
+</ContentPage>
