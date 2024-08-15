@@ -21,9 +21,9 @@
 
 ## **Screenshots**
 <div style="display: flex; justify-content: space-around;">
-    <img src="https://github.com/user-attachments/assets/c4403718-903f-4e30-9506-aabe792ea954" width="30%" />
-    <img src="https://github.com/user-attachments/assets/8bd13faa-c2e3-4c1a-947b-e863fdf3f571" width="30%" />
-    <img src="https://github.com/user-attachments/assets/b0461879-2dfb-48fb-8bba-6ce07d2c3f3c" width="30%" />
+    <img src="https://github.com/user-attachments/assets/c4403718-903f-4e30-9506-aabe792ea954" width="25%" />
+    <img src="https://github.com/user-attachments/assets/8bd13faa-c2e3-4c1a-947b-e863fdf3f571" width="25%" />
+    <img src="https://github.com/user-attachments/assets/b0461879-2dfb-48fb-8bba-6ce07d2c3f3c" width="25%" />
 </div>
 
 
