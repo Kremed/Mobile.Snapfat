@@ -1,6 +1,6 @@
-# **SnapFat - MAUI Carousel View Challenge**
+# SnapFat - MAUI Carousel View Challenge
 
-## **Overview**
+## Getting started
 **SnapFat** is an open-source project built with .NET MAUI, showcasing a dynamic and responsive UI challenge. The primary focus of this project is the implementation of a **CarouselView** that expands to fit the full screen, allowing users to scroll vertically through a series of immersive content cards. Each card in the carousel provides an engaging experience with content that adjusts beautifully to different screen sizes.
 
 ## **Features**
